@@ -22,6 +22,8 @@ from Controllers import TheAudioDB
 from Controllers import Wikipedia
 from Controllers import Palm
 from Controllers import YoutubeMusic
+from Controllers import Itunes
+from Controllers import Genius
 from pprint import pprint
 
 # Total Number of possible Subqueries = 14 mechanisms * 10 fields = 80
@@ -64,6 +66,8 @@ async def classifier(query: str):
         Spotify.getFields(artist, title),
         Palm.getFields(artist, title),
         YoutubeMusic.getFields(artist, title),
+        Itunes.getFields(artist,title),
+        Genius.getFields(artist,title)
     )
 
     # #Classify each value for most probable solution
